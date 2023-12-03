@@ -1,0 +1,46 @@
+@import '../../styles/variables';
+.documents{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3rem 1rem;
+    margin: 4rem;
+    // grid-column: 3;
+    font-size: 1.8rem;
+    &__column{
+        background-image: linear-gradient(to top,#213DD9 ,#87DDFD);
+        height: 30rem;
+        border-radius: 1rem;
+        width: 30rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &--header{
+            &--icon{
+                display: flex;
+                & :hover ~ &--title{
+                    opacity: 1;
+                }
+            }
+            &--title{
+                opacity: 0;
+                margin-top: 2rem;
+                font-weight: 400;
+            }
+        }
+        &--content{
+
+        }
+    }
+}
+.jWkLDY > span {
+    font-size: 1.5rem!important;
+    color: rgb(255 255 255)!important;
+}
+.guZdik{
+    height: 70px!important;
+    width: 400px!important;
+    border: 3px dashed #0d374f!important;
+
+}

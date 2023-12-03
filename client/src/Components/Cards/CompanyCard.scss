@@ -1,0 +1,83 @@
+@import '../../styles/variables.scss';
+.company_card{
+     color: black;
+     // width: 100%;
+     padding: .8rem 1rem;
+     &>*{
+          width: 30rem;
+     }
+}
+.header{
+     display: flex;
+     justify-content: center;
+     font-size: 2rem;
+     margin-bottom: 1.6rem;
+}
+.basic_details, .folder_details{
+     margin-bottom: 1.6rem;
+     & > *{
+          display: flex;
+          justify-content: space-between;
+     }
+     & div{
+          // margin-bottom: .7rem;
+          padding: .5rem 3rem;
+          font-size: 11px;
+     }
+}
+.submit{
+     display: flex;
+     justify-content: center;
+     padding: 1rem;
+     box-sizing: border-box;
+     & button{
+          padding: 1rem 3rem;
+          border-radius: 30px;
+          background-color: rgb(27, 104, 159);
+          color: white;
+     }
+
+}
+/* Style for the slider checkbox */
+.slider-container {
+     display: flex;
+     position: relative;
+     width: 4rem; /* Adjust the width as needed */
+     height: 2rem; /* Adjust the height as needed */
+   }
+
+   .slider {
+     position: absolute;
+     cursor: pointer;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: #ccc;
+     border-radius: 30px; /* Makes it a rounded slider */
+     transition: 0.2s;
+   }
+
+   .slider:before {
+     position: absolute;
+     content: "";
+     height: 1.5rem; /* Adjust the height of the slider thumb */
+     width: 1.5rem; /* Adjust the width of the slider thumb */
+     left: 3px; /* Adjust the initial position of the slider thumb */
+     top: 3px; /* Adjust the initial position of the slider thumb */
+     background-color: white;
+     border-radius: 50%; /* Makes it a round thumb */
+     transition: 0.4s;
+   }
+
+   input[type="checkbox"] {
+     display: none; /* Hide the checkbox */
+   }
+
+   input[type="checkbox"]:checked + .slider {
+     background-color: #2196F3; /* Change the background color for the checked state */
+   }
+
+   input[type="checkbox"]:checked + .slider:before {
+     transform: translateX(20px); /* Move the thumb to the right for the checked state */
+   }
