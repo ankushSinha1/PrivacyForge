@@ -13,7 +13,7 @@ import Loader from "../Helpers/Loader";
 import Logo from '../Cards/Logo'
 import Push from "../Cards/Push";
 import './LandingPage.scss'
-import Lottie from 'react-lottie';
+import Lottie from 'lottie-react';
 import animationData from './Lottie/security-research.json';
 const Homepage = ({ setconnected }) => {
   const [signers, setsigners] = useState(null);

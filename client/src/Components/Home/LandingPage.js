@@ -1,6 +1,6 @@
 import React from 'react'
 import './LandingPage.scss'
-import Lottie from 'react-lottie';
+import Lottie from 'lottie-react';
 import animationData from './Lottie/security-research.json';
 
 const LandingPage = () => {
