@@ -42,7 +42,7 @@ const Homepage = ({ setconnected }) => {
         try {
           await ethereum.request({
             method: "wallet_switchEthereumChain",
-            params: [{ chainId: "0x5" }],
+            params: [{ chainId: "0x46b" }],
           });
         } catch (switchError) {
           // This error code indicates that the chain has not been added to MetaMask.
@@ -53,15 +53,15 @@ const Homepage = ({ setconnected }) => {
                 method: "wallet_addEthereumChain",
                 params: [
                   {
-                    chainId: "0x5",
-                    chainName: "Ethereum",
+                    chainId: "0x46b",
+                    chainName: "DeFiChain EVM Network Testnet",
                     nativeCurrency: {
-                      name: "Goerli",
-                      symbol: "ETH",
+                      name: "DeFi",
+                      symbol: "DFI",
                       decimals: 18,
                     },
-                    rpcUrls: ["wss://ethereum-goerli.publicnode.com	"],
-                    blockExplorerUrls: ["https://goerli.etherscan.io"],
+                    rpcUrls: ["https://dmc.mydefichain.com/testnet	"],
+                    blockExplorerUrls: ["https://meta.defichain.com/"],
                   },
                 ],
               })
@@ -74,7 +74,8 @@ const Homepage = ({ setconnected }) => {
         setsigners(signer);
         const address = await signer.getAddress();
         setaccounts(address);
-        let contractAddress = "0x339d6C9602E47E0834735ebE570200AC870529c1"; //mumbai
+        let contractAddress = "0x196d4119944CD005AD917466B8e2e2Ec018FA547" //defichain
+        // let contractAddress = "0x339d6C9602E47E0834735ebE570200AC870529c1"; //mumbai
         //0x7492502792E8B8efE1503DAE8fa5913a008F5934 latest mumbai
         //0x196d4119944CD005AD917466B8e2e2Ec018FA547 fujin testnet 
         const contractInstance = new ethers.Contract(
