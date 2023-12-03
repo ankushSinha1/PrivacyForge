@@ -66,12 +66,11 @@ const UserPage = ({ contract, fetched, folders,account,userAlice }) => {
   ]
   const setBgColor = (index) => {
     if(index%3 === 0){
-      return 'linear-gradient(to bottom, #87efa2, #0bb79a)'
-    }
-    else if(index%3 === 1){
-      return 'linear-gradient(to bottom, #f4c402, #f56701)'
+      return 'linear-gradient(to bottom, #7ed56f 20%, #28b485 100%)'
+    }else if(index%3 === 1){
+      return 'linear-gradient(to bottom, #f4c402 20%, #f56701)'
     }else{
-      return 'linear-gradient(to bottom, #fa9f88, #fa4582ff)'
+      return 'linear-gradient(to bottom, #87DDFD 20%, #213DD9)'
     }
   }
   const openFolder = async (i) => {
@@ -224,6 +223,7 @@ const UserPage = ({ contract, fetched, folders,account,userAlice }) => {
                     })}
                   </div>
                 </div>
+      {/* REQUESTS */}
                 <div className="row__2">
                   <div className="row__header">
                     <div className="row__title">Requests</div>
@@ -264,9 +264,8 @@ const UserPage = ({ contract, fetched, folders,account,userAlice }) => {
                               style={{
                                 cursor: 'pointer', 
                                 padding: '2px 9px',
-                                fontSize: '15px',
-                                fontWeight: 'lighter',
-                                fontFamily: 'sans-serif'
+                                fontSize: '1.8rem',
+                                fontWeight: '400'
                               }} 
                               onClick={()=>{
                                 openReqModal()

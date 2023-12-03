@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./Homepage.scss";
 import { ethers } from "ethers";
-
 import SignUp from "../Auth/SignUp";
 import { PiUserCircle } from "react-icons/pi";
 import DeID from "../../artifacts/contracts/DeID.sol/DeID.json";
+
 import UserPage from "./UserPage";
 import CompanyPage from "./CompanyPage";
 import { truncateAddressNavbar } from "../Helpers/truncateAddress";
 import Notifications from '../Cards/Notifications'
+
 import Loader from "../Helpers/Loader";
 import Logo from '../Cards/Logo'
 import './LandingPage.scss'
-import Lottie from 'react-lottie';
+import Lottie from 'lottie-react';
 import animationData from './Lottie/security-research.json';
 const Homepage = ({ setconnected }) => {
   const [signers, setsigners] = useState(null);
@@ -157,27 +158,17 @@ const Homepage = ({ setconnected }) => {
   //Use effect to get the logged in details, to accordingly load user and company homepage
   return (
     <div>
-
       {connect ? (
         <>
           <div className="logo" style={{
             width: 'auto',
             marginTop: '3rem',
-            paddingLeft: '4rem',
+            marginLeft: '4rem',
+            paddingRight: '2rem',
             height: '6rem',
-            display: 'flex'
+            display: 'flex',
           }}>
             <Logo />
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              paddingLeft: '2.8rem',
-              fontSize: '30px',
-              // fontFamily: 'serrif',
-              fontWeight: '600'
-            }}>
-              File Guardian
-            </div>
           </div>
           <div className="navbar ">
             <div className={`navbar__center`}>
@@ -186,22 +177,24 @@ const Homepage = ({ setconnected }) => {
                 display: 'flex',
                 gap: '3rem'
               }}>
+                {connect?<>
                 {isuser ? <>
                   <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>My folders</button>
                   <button onClick={() => window.scrollTo({ top: 500, behavior: "smooth" })}>Requests</button>
+                  <button onClick={() => window.scrollTo({ top: 1800, behavior: "smooth" })}>Active companies</button>
                 </> :
-                  <>
-                    <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Active users</button>
-                    <button onClick={() => window.scrollTo({ top: 500, behavior: "smooth" })}>Requests</button>
-                    {/* <button onClick={()=>window.scrollTo({top: 1800, behavior: "smooth"})}>History</button> */}
-
-                  </>}
+                <>
+                  <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Active users</button>
+                  <button style={{marginRight: '3rem' }} onClick={() => window.scrollTo({ top: 500, behavior: "smooth" })}>Requests</button>
+                </>}
+              </>:<>
+              </>}
               </div>
               <div className={`${" transition ease-in-out delay-150"} navbar__right`} style={{}}>
                 {fetched && isuser && (
                   <div className="navbar__left">
                     {userDetails?.Image.length === 0 ? (
-                      <PiUserCircle size={30} />
+                      <PiUserCircle size={30} color="black"/>
                     ) : (
                       <img
                         src={userDetails?.Image}
@@ -218,9 +211,9 @@ const Homepage = ({ setconnected }) => {
                     }}>
                       accounts : {truncateAddressNavbar(accounts)}
                     </button>
-                    <button className="navbar__right--notify">
+                    {/* <button className="navbar__right--notify">
                       <Notifications userAlice={userAlice} />
-                    </button>
+                    </button> */}
                   </>
                 ) : (
                   <button
@@ -281,18 +274,18 @@ const Homepage = ({ setconnected }) => {
                 fontSize: '16px',
                 display: 'flex',
                 gap: '3rem'
-              }}>
+              }}>{connect?<>
                 {isuser ? <>
                   <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>My folders</button>
                   <button onClick={() => window.scrollTo({ top: 500, behavior: "smooth" })}>Requests</button>
                   <button onClick={() => window.scrollTo({ top: 1800, behavior: "smooth" })}>History</button>
                 </> :
-                  <>
-                    <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Active users</button>
-                    <button onClick={() => window.scrollTo({ top: 500, behavior: "smooth" })}>Requests</button>
-                    {/* <button onClick={()=>window.scrollTo({top: 1800, behavior: "smooth"})}>History</button> */}
-
-                  </>}
+                <>
+                  <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Active users</button>
+                  <button onClick={() => window.scrollTo({ top: 500, behavior: "smooth" })}>Requests</button>
+                </>}
+              </>:<>
+              </>}
               </div>
               <div className={`${" transition ease-in-out delay-150"} navbar__right`} style={{}}>
                 {fetched && isuser && (
@@ -315,9 +308,9 @@ const Homepage = ({ setconnected }) => {
                     }}>
                       accounts : {truncateAddressNavbar(accounts)}
                     </button>
-                    <button className="navbar__right--notify">
+                    {/* <button className="navbar__right--notify">
                       <Notifications userAlice={userAlice} />
-                    </button>
+                    </button> */}
                   </>
                 ) : (
                   <button
@@ -331,28 +324,14 @@ const Homepage = ({ setconnected }) => {
                 )}
               </div>
             </div>
-            {
-            }
           </div>
-          <div className='container'>
+          <div className='container' style={{padding: '0 4rem'}}>
             <div className="logo" style={{
               width: 'auto',
-              marginTop: '3rem',
-              paddingLeft: '4rem',
-              height: '6rem',
+              paddingTop: '3rem',
               display: 'flex'
             }}>
               <Logo />
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                paddingLeft: '2.8rem',
-                fontSize: '30px',
-                // fontFamily: 'serrif',
-                fontWeight: '600'
-              }}>
-                File Guardian
-              </div>
             </div>
             <div className="container__content">
               <div className='container__content__text'>
@@ -364,23 +343,36 @@ const Homepage = ({ setconnected }) => {
                 </div>
               </div>
               <div className='container__content__anim'>
-                {/* <script src='./security-research.json'></script> */}
-                {/* <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+              <script src='./security-research.json'></script>
+              <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-      <lottie-player src="https://lottie.host/6f4ee854-3625-4849-8985-e423a0752949/hZWZsrb0zk.json" background="transparent" speed="1" style={{width: '300px', height: '300px'}} direction="1" mode="normal" loop controls autoplay>
-      </lottie-player> */}
-                <Lottie
-                  options={{
-                    loop: true,
-                    autoplay: true,
-                    animationData: animationData,
-                    rendererSettings: {
-                      preserveAspectRatio: "xMidYMid slice"
-                    }
-                  }}
-                  height={400}
-                  width={450}
-                />
+                  <lottie-player src="https://lottie.host/aad80558-92fa-4cef-af48-7464f77720cb/RPzCBdaR8Z.json"  background="transparent" speed="1" style={{width: '300px', height: '300px'}} direction="1" mode="normal" loop controls autoplay>
+                  </lottie-player>
+              <Lottie
+                options={{
+                  loop: true,
+                  autoplay: true,
+                  animationData: animationData,
+                  rendererSettings: {
+                    preserveAspectRatio: "xMidYMid slice"
+                  }
+                }}
+                height={400}
+                width={450}
+              />
+                 {/* <script src='./security-research.json'></script>
+                <lottie-player 
+                  src="https://lottie.host/aad80558-92fa-4cef-af48-7464f77720cb/RPzCBdaR8Z.json" 
+                  background="transparent" 
+                  speed="1" 
+                  style={{width: '300px', height: '300px'}} 
+                  direction="1"
+                  mode="normal" 
+                  loop 
+                  controls 
+                  autoplay>
+
+                  </lottie-player> */}
               </div>
             </div>
           </div>

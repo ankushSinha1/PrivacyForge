@@ -118,12 +118,11 @@ const CompanyPage = ({ contract, userAlice, userDetails, fetched, folders, conne
   };
   const setBgColor = (index) => {
     if (index % 3 === 0) {
-      return 'linear-gradient(to bottom, #fa9f88, #fa4582ff)'
-    }
-    else if (index % 3 === 1) {
+      return 'linear-gradient(to bottom, #7ed56f #28b485)'
+    }else if (index % 3 === 1) {
       return 'linear-gradient(to bottom, #f4c402, #f56701)'
     } else {
-      return 'linear-gradient(to bottom, #87efa2, #0bb79a)'
+      return 'linear-gradient(to bottom, #87DDFD, #213DD9)'
     }
   }
   useEffect(() => {

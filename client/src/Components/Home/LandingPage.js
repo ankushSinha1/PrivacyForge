@@ -1,6 +1,6 @@
 import React from 'react'
 import './LandingPage.scss'
-import Lottie from 'react-lottie';
+import Lottie from 'lottie-react';
 import animationData from './Lottie/security-research.json';
 
 const LandingPage = () => {
@@ -15,11 +15,11 @@ const LandingPage = () => {
         </div>
       </div>
       <div className='container__anim'>
-        {/* <script src='./security-research.json'></script> */}
-        {/* <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src='./security-research.json'></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
             <lottie-player src="https://lottie.host/6f4ee854-3625-4849-8985-e423a0752949/hZWZsrb0zk.json" background="transparent" speed="1" style={{width: '300px', height: '300px'}} direction="1" mode="normal" loop controls autoplay>
-            </lottie-player> */}
+            </lottie-player>
         <Lottie
           options={{
             loop: true,

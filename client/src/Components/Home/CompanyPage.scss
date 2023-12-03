@@ -32,7 +32,7 @@
     }
     &__btn{
         // box-sizing: border-box;
-        border-bottom: 2px solid $color-button-primary;
+        // border-bottom: 2px solid $color-button-primary;
         transition: all .2s;
         & span{
             transition: all .2s;
@@ -80,7 +80,7 @@
     height: 30.5rem;
     font-weight: 300;
     // background-color: $color-button-dark;
-    border-radius: 3rem;
+    border-radius: 1.5rem;
     transition: all .3s;
     padding: 1rem;
     margin: 0 4rem;
@@ -193,9 +193,9 @@
 
     & button{
         border-radius: 100px;
-        padding: 10px 16px;
-        background-image: linear-gradient(to top,#213DD9 ,#87DDFD);
-        // background-color: rgb(27, 104, 159);
+        padding: 1rem 2rem;
+        color: white;
+        background-image: linear-gradient(to top,#223abe ,rgb(125, 220, 254));
         z-index: 10;
     }
     &__code{
