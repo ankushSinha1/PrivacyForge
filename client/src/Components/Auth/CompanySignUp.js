@@ -24,7 +24,9 @@ const CompanySignUp = ({ contract, accounts, provider }) => {
   const onSubmit = async (e) => {
     e.preventDefault()
     try {
-
+      console.log("Vals", contactNum, regId, name, image);
+      const res = await contract.createCompany(contactNum, regId, name, image);
+      console.log(res);
     } catch (error) {
       console.log("Error", error);
     }
