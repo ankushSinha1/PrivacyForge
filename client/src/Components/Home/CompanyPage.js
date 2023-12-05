@@ -24,13 +24,9 @@ const CompanyPage = ({ contract, userAlice, userDetails, fetched, folders, conne
   const [bg, setbg] = useState('');
 
   const openReqModal = async (address) => {
-    const result = await documentAccessed(address);
-    console.log("Filesigned", result);
-    if (result) {
-      setisReqModalOpen(true);
-    } else {
-      closeReqModal();
-    }
+    // const result = await documentAccessed(address);
+    // console.log("Filesigned", result);
+    setisReqModalOpen(true);
   };
   const closeReqModal = () => {
     setisReqModalOpen(false);
@@ -119,7 +115,7 @@ const CompanyPage = ({ contract, userAlice, userDetails, fetched, folders, conne
   const setBgColor = (index) => {
     if (index % 3 === 0) {
       return 'linear-gradient(to bottom, #7ed56f #28b485)'
-    }else if (index % 3 === 1) {
+    } else if (index % 3 === 1) {
       return 'linear-gradient(to bottom, #f4c402, #f56701)'
     } else {
       return 'linear-gradient(to bottom, #87DDFD, #213DD9)'

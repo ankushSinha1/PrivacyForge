@@ -13,7 +13,7 @@ import Notifications from '../Cards/Notifications'
 import Loader from "../Helpers/Loader";
 import Logo from '../Cards/Logo'
 import './LandingPage.scss'
-import Lottie from 'react-lottie';
+// import Lottie from 'react-lottie';
 import animationData from './Lottie/security-research.json';
 const Homepage = ({ setconnected }) => {
   const [signers, setsigners] = useState(null);
@@ -342,7 +342,7 @@ const Homepage = ({ setconnected }) => {
                   Take control of the privacy of your precious documents by using File PrivacyForge, ensuring that only those you've granted access can use them.
                 </div>
               </div>
-              <div className='container__content__anim'>
+              {/* <div className='container__content__anim'>
                 <script src='./security-research.json'></script>
                 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
@@ -360,20 +360,7 @@ const Homepage = ({ setconnected }) => {
                   height={400}
                   width={450}
                 />
-                {/* <script src='./security-research.json'></script>
-                <lottie-player 
-                  src="https://lottie.host/aad80558-92fa-4cef-af48-7464f77720cb/RPzCBdaR8Z.json" 
-                  background="transparent" 
-                  speed="1" 
-                  style={{width: '300px', height: '300px'}} 
-                  direction="1"
-                  mode="normal" 
-                  loop 
-                  controls 
-                  autoplay>
-
-                  </lottie-player> */}
-              </div>
+              </div> */}
             </div>
           </div>
         </>
