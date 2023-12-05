@@ -14,7 +14,7 @@ import Loader from "../Helpers/Loader";
 import Logo from '../Cards/Logo'
 import './LandingPage.scss'
 // import Lottie from 'react-lottie';
-import animationData from './Lottie/security-research.json';
+// import animationData from './Lottie/security-research.json';
 const Homepage = ({ setconnected }) => {
   const [signers, setsigners] = useState(null);
   const [connect, setconnect] = useState(false);
