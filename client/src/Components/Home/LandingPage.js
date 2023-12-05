@@ -1,7 +1,7 @@
 import React from 'react'
 import './LandingPage.scss'
-import Lottie from 'react-lottie';
-import animationData from './Lottie/security-research.json';
+// import Lottie from 'react-lottie';
+// import animationData from './Lottie/security-research.json';
 
 const LandingPage = () => {
   return (
@@ -14,7 +14,7 @@ const LandingPage = () => {
           Take control of the privacy of your precious documents by using PrivacyForge, ensuring that only those you've granted access can use them.
         </div>
       </div>
-      <div className='container__anim'>
+      {/* <div className='container__anim'>
         <script src='./security-research.json'></script>
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
@@ -32,7 +32,7 @@ const LandingPage = () => {
           height={400}
           width={450}
         />
-      </div>
+      </div> */}
     </div>
   )
 }
